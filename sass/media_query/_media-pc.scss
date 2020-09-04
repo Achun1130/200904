@@ -1,0 +1,29 @@
+@mixin ipad {
+    @media (max-width:768px) {
+        @content
+    }
+};
+
+@mixin mobile {
+    @media (max-width:767px) {
+        @content
+    }    
+};
+
+@mixin  plus {
+    @media (max-width:414px) {
+        @content
+    }
+};
+
+@mixin iphone6 {
+    @media (max-width:375px) {
+        @content
+    }    
+};
+
+@mixin SE {
+    @media (max-width:320px) {
+        @content
+    }    
+};

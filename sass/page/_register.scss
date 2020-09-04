@@ -1,0 +1,121 @@
+@import '../flex/flex';
+@import '../media_query/media-pc';
+@import '../module/button';
+@import '../module/form';
+@import '../mixin';
+
+.register {
+    @include bg-c;
+    padding: 50px 0 4px;
+    h3 {
+        @include font-5l;
+        margin-bottom: 5px;
+        text-align: center;
+        @include ff-s;
+        font-weight: bold;
+    }
+    p {
+        @include font-l;
+        text-align: center;
+        @include ff-s;
+        margin-bottom: 35px;
+        font-weight: 500;
+    }
+    .register-form {
+        max-width: 620px;
+        margin: 0 auto;
+        padding: 15px;
+        box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+        border-top: 3px solid#FF5E45 ;
+        p {
+            width: 48%;
+            @include ff-m;
+            @include font-l;
+            @include lh-s;
+            text-align: left;
+            @include plus {
+                width: 95%;
+            }
+        }
+        label {
+            @include lh-5;
+            margin: 3px 0;
+        }
+        legend {
+            @include ff-s;
+            font-weight: bold;
+            @include font-xl;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        input[type="email"] {
+            margin: 0;
+            width: 100%;
+            padding-left: 30px;
+            @include font-s;
+        }
+        input[type="password"] {
+            margin: 0;
+            width: 100%;
+            padding-left: 30px;
+            @include font-s;
+        }
+    }
+    .register-content {
+        @include flex-sb;
+        @include plus {
+            @include flex-ccc;
+        }
+    }
+    .register-item {
+        width: 48%;
+        @include plus {
+            width: 95%;
+        }
+    }
+    .email {
+        margin-bottom: 12px;
+        @include relative;
+        i {
+            @include absolute;
+            @include font-xs;
+            left: 9px;
+            top: calc(50% - 6px);
+            color: rgba(61,17,0,0.50);
+        }
+    }
+    .password {
+        @include relative;
+        i {
+            @include absolute;
+            @include font-s;
+            left: 9px;
+            top: calc(50% - 7px);
+            color: rgba(61,17,0,0.50);
+        }
+        &:nth-child(4) {
+            margin-bottom: 12px;
+        }
+    }
+    a[href$="html"] {
+        @include font-s;
+        color: #FF5E45;
+        line-height: 19px;
+        margin: 1px 0 30px 0;
+        display: inline-block;
+        float: left;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    button {
+        width: 125px;
+        @include font-s;
+        @include lh-s;
+        padding: 6px 0;
+        text-align: center;
+        background-color: #F56C23;
+        border-radius: 3px;
+        float: right;
+    }
+}

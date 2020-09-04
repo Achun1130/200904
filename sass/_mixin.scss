@@ -1,0 +1,148 @@
+@mixin font-xs {
+    font-size: 12px;
+}
+
+@mixin font-s {
+    font-size: 14px;
+}
+
+@mixin font-m {
+    font-size: 16px;
+}
+
+@mixin font-l {
+    font-size: 18px;
+}
+
+@mixin font-xl {
+    font-size: 20px;
+}
+
+@mixin font-2l {
+    font-size: 24px;
+}
+
+@mixin font-3l {
+    font-size: 32px;
+}
+
+@mixin font-4l {
+    font-size: 36px;
+}
+
+@mixin font-5l {
+    font-size: 48px;
+}
+
+@mixin lh-4 {
+    line-height: 1.3334;
+}
+
+@mixin lh-5 {
+    line-height: 1.3125;
+}
+
+@mixin lh-l {
+    line-height: 32px;
+}
+
+@mixin lh-m {
+    line-height: 24px;
+}
+
+@mixin lh-s {
+    line-height: 20px;
+}
+
+@mixin ff-m {
+    font-family: 'Microsoft JhengHei Regular';
+}
+
+@mixin ff-s {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+@mixin ff-ss {
+    font-family: 'Roboto', sans-serif;
+}
+
+$bgcolor-m: #efe9e7;
+
+$bgcolor-s:rgba(0,0,0,0.75);
+
+$color-m: #3D1101;
+
+$color-s: #fff;
+
+@mixin bg-c {
+    background: $bgcolor-m;
+    color: $color-m;
+}
+
+@mixin a {
+    text-decoration: none;
+    display: block;
+}
+
+
+@mixin relative {
+    position: relative;
+}
+
+@mixin absolute {
+    position: absolute;
+}
+
+@mixin fixed {
+    position: fixed;
+}
+
+@mixin transition {
+    transition: all .7s;
+}
+
+@mixin padding-s {
+    padding: 0 13px
+}
+
+@mixin padding-m {
+    padding: 50px 13px;
+}
+
+@mixin hide-text {
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin none {
+    display: none;
+}
+
+.clearfix {
+    clear: both;
+}
+
+@mixin before($width,$height) {
+    content: "";
+    width: $width;
+    height: $height;
+    display: block;
+    position: absolute;
+    @content
+}
+
+@mixin after($width,$height) {
+    content: "";
+    width: $width;
+    height: $height;
+    display: block;
+    position: absolute;
+    @content;
+}
+
+@mixin tri($t,$r,$d,$l,$color) {
+    border-width: $t $r $d $l;
+    border-style: solid;
+    border-color: $color transparent transparent;
+}

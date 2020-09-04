@@ -1,0 +1,268 @@
+@import '../flex/flex';
+@import '../media_query/media-pc';
+@import '../module/form';
+@import '../module/button';
+@import '../mixin';
+
+.feature {
+    @include bg-c;
+    .container {
+        @include flex-ccc;
+        @include padding-m;
+    }
+    h3 {
+        text-align: center;
+        @include font-xl;
+        @include lh-l;
+        @include relative;
+        margin-bottom: 30px;
+        &::before {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 1px;
+            background: #979797;
+            @include absolute;
+            top: calc(50% - 0.5px);
+            left: -140px;
+            @include plus {
+                @include none;
+            }
+        }
+        &::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 1px;
+            background: #979797;
+            @include absolute;
+            top: calc(50% - 0.5px);
+            right: -140px;
+            @include plus {
+                @include none;
+            }
+        }
+    }
+    h4 {
+        @include font-l;
+        margin: 20px 0 11px;
+        @include lh-4;
+    }
+    .feature-content {
+        @include flex-sb;
+        @include plus {
+            @include flex-ccc;
+        }
+    }
+    .feature-item {
+        width: 31.33333%;
+        @include flex-ccc;
+        justify-content: flex-start;
+        padding: 15px;
+        @include ipad {
+            width: 45%;
+        }
+        @include plus {
+            width: 95%;
+        }
+        &:nth-child(2) {
+            @include ipad {
+                @include none;
+            }
+            @include plus {
+                @include flex;
+            }
+        }
+        img {
+            border-radius: 50%;
+        }
+    }
+    p {
+        @include lh-5;
+    }
+}
+
+.chef {
+    background: $color-m;
+    color: $bgcolor-m;
+    .container {
+        @include flex-rcc;
+        @include padding-s;
+        @include mobile {
+            @include flex-ccc;
+        }
+    }
+    .chef-img {
+        width: 50%;
+        text-align: center;
+        @include mobile {
+            width: 100%;
+        }
+        img {
+            height: 460px;
+        }
+    }
+    .chef-content {
+        width: 50%;
+        padding: 80px 25px;
+        @include mobile {
+            width: 95%;
+        }
+    }
+    h3 {
+        @include font-xl;
+        @include lh-l;
+    }
+    p {
+        @include lh-5;
+    }
+    span {
+        @include lh-5;
+        @include font-m;
+    }
+}
+
+.thought {
+    @include padding-m;
+    @include bg-c;
+    h3 {
+        text-align: center;
+        margin-bottom: 32px;
+        @include lh-4;
+        @include font-2l;
+    }
+    ul {
+        @include flex-sb;
+        @include plus {
+            @include flex-ccc;
+        }
+    }
+    .thought-item {
+        @include flex;
+        align-items: flex-start;
+        width: 31.33333%;
+        @include ipad {
+            width: 45%;
+        }
+        @include plus {
+            width: 95%;
+        }
+        &:nth-child(2) {
+            @include ipad {
+                @include none;
+            }
+            @include plus {
+                @include flex;
+                margin: 30px 0;
+            }
+        }
+    }
+    img {
+        border-radius: 50%;
+    }
+    h5 {
+        @include font-l;
+        margin: 19px 0 22px;
+        @include lh-4;
+    }
+    p {
+        @include lh-m;
+        margin-bottom: 1em;
+        &:last-child {
+            text-align: right;
+            margin-bottom: 0;
+            color: rgba(61,17,0,0.75);
+        }
+    }
+    .thought-content {
+        @include padding-s;
+    }
+}
+
+.booking {
+    background: #f6f4f3;
+    .container {
+        @include padding-m;
+    }
+    h3 {
+        @include lh-4;
+        @include font-2l;
+        text-align: center;
+        margin-bottom: 30px;
+        color: $color-m;
+    }
+    .booking-content {
+        @include flex-sbc;
+        @include mobile {
+            @include flex-ccc;
+        }
+    }
+    .booking-map {
+        width: 48%;
+        @include relative;
+        padding-bottom: 40%;
+        height: 0;
+        overflow: hidden;
+        @include mobile {
+            width: 95%;
+            padding-bottom: 100%;
+            margin-bottom: 30px;
+        }
+        iframe {
+            @include absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    form {
+        width: 48%;
+        @include mobile{
+            width: 95%;
+        }
+    }
+    input {
+        width: 100%;
+        @include font-s;
+        &[type="radio"] {
+            width: 16px;
+            margin: 0 36px 0 6px;
+        }
+    }
+    label {
+        @include font-s;
+        color: $color-m;
+    }
+    p {
+        @include font-s;
+        color: $color-m;
+        margin: 0.375em 0;
+    }
+    .booking-veg {
+        @include flex-ac;
+    }
+    .booking-btn {
+        @include flex;
+        justify-content: flex-end;
+        a {
+            width: 70px;
+            @include font-s;
+            @include lh-s;
+            padding: 6px 0;
+            text-align: center;
+            background-color: rgba(0,0,0,0.35);
+            border-radius: 3px;
+            margin-right: 11px;
+        }
+    }
+    button {
+        width: 70px;
+        @include font-s;
+        @include lh-s;
+        padding: 6px 0;
+        text-align: center;
+        background-color: #F56C23;
+        border-radius: 3px;
+    }
+}

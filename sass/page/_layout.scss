@@ -1,0 +1,392 @@
+@import '../mixin';
+@import '../flex/flex';
+@import '../media_query/media-pc';
+
+body {
+    @include ff-m;
+}
+
+a {
+    @include a;
+}
+
+.wrap {
+    overflow: hidden;
+    @include relative;
+}
+
+.header {
+    background: $bgcolor-s;
+    @include transition;
+    @include fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    color: $color-s;
+    a {
+        color: $color-s;
+    }
+    .container {
+        @include padding-s;
+        @include flex-sbc;
+        @include ipad {
+            padding: 0;
+        }
+    }
+    h1 a {
+        width: 120px;
+        height: 24px;
+        background: url('../img/logo_w\(null\).svg');
+        @include hide-text;
+    }
+    .login-btn {
+        @include none;
+        @include ipad {
+            display: block;
+            @include font-3l;
+            padding: 10px;
+        }
+    }
+    .nav-btn {
+        @include none;
+        @include ipad {
+            display: block;
+            @include font-3l;
+            padding: 10px;
+        }
+    }
+    .nav {
+        @include flex-ac;
+        @include ipad {
+            @include none;
+        }
+        li {
+            ul a:hover {
+                background: rgba(255, 255, 255, 0.658);
+                color: $bgcolor-s;
+            }
+            &:nth-child(5) a {
+                padding: 5px 10px;
+                background: $color-s;
+                color: #000;
+                border-radius: 10px;
+                border:none;
+                margin: 0 10px;
+                &:hover {
+                    opacity: .9;
+                }
+            }
+            &:nth-child(6) a {
+                padding: 5px 10px;
+                background: $color-s;
+                color: #000;
+                border-radius: 10px;
+                border:none;
+                &:hover {
+                    opacity: .9;
+                }
+            }
+        }
+    }
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.nav {
+    li {
+        @include relative;
+        a {
+            padding: 18px 15px 17px;
+            border-bottom: 1px solid transparent;
+            &:hover {
+                border-bottom: 1px solid $color-s;
+            }
+        }
+        ul {
+            @include absolute;
+            top: 52px;
+            background: $bgcolor-s;
+            @include transition;
+            max-height: 0;
+            overflow: hidden;
+            a {
+                padding: 10px 22.24px;
+                border-bottom: 1px dashed $color-s;
+            }
+        }
+        &.active {
+            ul {
+                max-height: 208px;
+            }
+            > a {
+                border-bottom: 1px solid $color-s;
+            }
+        }
+        &:nth-child(1) i {
+            /* 特色 icon*/
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+        &:nth-child(2) i {
+            /* 主廚 icon*/
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+        &:nth-child(3) i {
+            /* 地圖 icon*/
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        &:nth-child(4) i:last-child {
+            /* 菜單展開 icon */
+            margin-right: 0;
+            margin-left: 5px;
+        }
+    }
+    i {
+        margin-right: 5px;
+    }
+}
+
+.aside {
+    @include none;
+    color: $color-s;
+    @include ipad {
+        display: block;
+        @include fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 12;
+        width: 240px;
+        background: #000;
+        transform: translateX(-240px);
+        @include transition;
+        overflow: auto;
+    }
+    .nav {
+        li {
+            a {
+                @include ipad {
+                border-bottom: 1px dashed $color-s;
+                }
+                &:active {
+                    @include ipad {
+                        background: rgba(255, 255, 255, 0.658);
+                        color: $bgcolor-s;
+                    }
+            }
+            }
+            &.active > a {
+                @include ipad {
+                    background: rgba(255, 255, 255, 0.658);
+                    color: $bgcolor-s;
+                }
+            }
+            &:nth-child(4) i:last-child {
+                @include ipad {
+                    margin-left: 20px;
+                }
+            }
+        }
+        i {
+            @include ipad {
+                margin-right: 20px;
+                margin-left: 10px;
+            }
+        }
+        ul {
+            @include ipad {
+                width: 100%;
+            }
+            a {
+                @include ipad {
+                    width: 100%;
+                    padding: 18px 0 17px 61px;
+                }
+            }
+        }
+    }
+    .nav-btn {
+        @include ipad {
+            display: inline-block;
+            @include font-3l;
+            float: right;
+            padding: 10px;
+        }
+    }
+    a {
+        color: $color-s;
+    }
+}
+
+.main {
+    @include transition;
+}
+
+.active {
+    .header {
+        @include ipad {
+            transform: translateX(240px);
+        }
+        .nav-btn {
+            @include ipad {
+                visibility: hidden;
+            }
+        }
+    }
+    .aside {
+        @include ipad {
+            transform: translateX(0px);
+        }
+    }
+    .wrap::before {
+        @include ipad {
+            content: "";
+            display: block;
+            @include fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,.5);
+            z-index: 11;
+        }
+    }
+    .main {
+        @include ipad {
+            transform:  translateX(240px);
+        }
+    }
+    .footer {
+        @include ipad {
+            transform: translateX(240px);
+        }
+    }
+}
+
+// header end
+
+.banner {
+    @include flex-rcc;
+    height: 420px;
+    background: url(../img/header_desktop.png) no-repeat #000 center;
+    color: $color-s;
+    @include mobile {
+        background-image: url(../img/header_mobile.png);
+    }
+    .banner-content {
+        background: rgba(0,0,0,0.35);
+        padding: 20px 42px 26px 22px;
+        @include mobile {
+            padding: 20px 6px;
+        }
+    }
+    h3 {
+        @include lh-4;
+        @include font-4l;
+        text-align: center;
+        span {
+            @include mobile {
+                display: block;
+            }
+        }
+    }
+    p {
+        @include lh-4;
+        margin-top: 1em;
+        text-align: center;
+        span {
+            margin: 0 10px;
+        }
+    }
+}
+
+// banner end
+
+.footer {
+    @include transition;
+    @include bg-c;
+    .container {
+        @include padding-m;
+        @include flex-sb;
+        @include ipad {
+            @include flex-rcc;
+        }
+        @include plus {
+            display: block;
+        }
+    }
+    .footer-item {
+        width: 31.33333%;
+        @include ipad {
+            width: 45%;
+        }
+        @include plus {
+            width: 245px;
+            margin: 0 auto;
+        }
+        &:first-child {
+            @include ipad {
+                @include none;
+            }
+        }
+        &:last-child {
+            @include flex-ce;
+            @include plus {
+                margin-top: 1em;
+                align-items: flex-start;
+            }
+        }
+    }
+    li a:hover {
+        opacity: .7;
+    }
+    h4 {
+        @include font-2l;
+        @include lh-4;
+    }
+    p {
+        margin-top: 1em;
+        @include lh-5;
+    }
+    h2 a {
+        width: 245px;
+        height: 49px;
+        background: url('../img/logo_l\(null\).svg') no-repeat;
+        @include hide-text;
+    }
+    .footer-info {
+        margin-top: 1em;
+        list-style: disc;
+        list-style-position: inside;
+        li {
+            @include lh-5;
+            a {
+                color: $color-m;
+                display: inline;
+            }
+        }
+    }
+    .footer-social {
+        margin-top: 22px;
+        @include flex;
+        li:nth-child(1) a {
+            color: #DB4437;
+        }
+        li:nth-child(2) a {
+            color: #41ABE1;
+            margin: 0 12px;
+        }
+        li:nth-child(3) a {
+            color: #3A5795;
+        }
+        i {
+            @include font-4l;
+        }
+    }
+}
+
+// footer end
